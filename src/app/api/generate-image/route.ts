@@ -8,8 +8,6 @@ export async function POST(request: Request) {
     const { text } = body;
 
     // TODO: Call your Image Generation API here
-    // For now, we'll just echo back the text
-
     if (!process.env.URL_PATH) {
       throw new Error("URL_PATH environment variable is not defined");
     }
@@ -27,8 +25,6 @@ export async function POST(request: Request) {
     } else {
       throw new Error("API_KEY environment variable is not defined");
     }
-
-    console.log("headers:", headers);
     
     const response = await fetch(url.toString(), {
       method: "GET",
